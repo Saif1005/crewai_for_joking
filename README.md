@@ -1,54 +1,86 @@
-# CrewDay02 Crew
+# crewAI for Joking
 
-Welcome to the CrewDay02 Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Bienvenue dans le projet **crewAI for Joking**, propulsé par [crewAI](https://crewai.com) pour des projets d'IA collaborative. Ce projet est basé sur le modèle **LLaMA 3.2:1B**, un modèle de langage avancé, conçu pour vous permettre de créer un système multi-agent où vos agents collaborent de manière efficace pour résoudre des tâches complexes. Grâce à **crewAI**, vous maximisez l'intelligence collective et les capacités de vos agents.
 
 ## Installation
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+Assurez-vous d'avoir **Python >=3.10 <3.13** installé sur votre système. Ce projet utilise [UV](https://docs.astral.sh/uv/) pour la gestion des dépendances et le traitement des packages, vous offrant ainsi une expérience de configuration et d'exécution fluide.
 
-First, if you haven't already, install uv:
+### Étapes d'installation :
 
-```bash
-pip install uv
-```
+1. Installez `uv` si ce n'est pas déjà fait :
 
-Next, navigate to your project directory and install the dependencies:
+    ```bash
+    pip install uv
+    ```
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+2. Ensuite, naviguez dans le répertoire de votre projet et installez les dépendances :
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+   (Optionnel) Vous pouvez verrouiller les dépendances et les installer en utilisant la commande CLI :
 
-- Modify `src/crew_day_02/config/agents.yaml` to define your agents
-- Modify `src/crew_day_02/config/tasks.yaml` to define your tasks
-- Modify `src/crew_day_02/crew.py` to add your own logic, tools and specific args
-- Modify `src/crew_day_02/main.py` to add custom inputs for your agents and tasks
+    ```bash
+    crewai install
+    ```
 
-## Running the Project
+### Installer Ollama
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+**Ollama** est une plateforme pour exécuter des modèles LLaMA localement. Voici comment l'installer et l'utiliser dans ce projet.
 
-```bash
-$ crewai run
-```
+1. **Téléchargez et installez Ollama :**
 
-This command initializes the crew_day_02 Crew, assembling the agents and assigning them tasks as defined in your configuration.
+   - Allez sur le site officiel d'Ollama pour télécharger et installer l'application : [Télécharger Ollama](https://ollama.com/download)
+   - Suivez les instructions d'installation pour votre système d'exploitation (Windows, macOS ou Linux).
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+2. **Vérifiez l'installation d'Ollama :**
 
-## Understanding Your Crew
+   Une fois installé, ouvrez un terminal ou une invite de commande et exécutez la commande suivante pour vérifier que l'installation a réussi :
 
-The crew_day_02 Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+    ```bash
+    ollama --version
+    ```
 
-## Support
+   Cela devrait afficher la version d'Ollama installée.
 
-For support, questions, or feedback regarding the CrewDay02 Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+3. **Configurer Ollama avec votre projet :**
 
-Let's create wonders together with the power and simplicity of crewAI.
+   - Après l'installation, vous pouvez utiliser Ollama pour charger et exécuter le modèle **LLaMA 3.2:1B** dans votre projet. 
+   - Assurez-vous que l'environnement Ollama est prêt à être utilisé avec **crewAI for Joking** en définissant les bonnes configurations dans votre projet.
+
+### Personnalisation
+
+1. **Ajoutez votre `OPENAI_API_KEY` dans le fichier `.env`**
+2. Modifiez `src/crew_day_02/config/agents.yaml` pour définir vos agents
+3. Modifiez `src/crew_day_02/config/tasks.yaml` pour définir vos tâches
+4. Modifiez `src/crew_day_02/crew.py` pour ajouter votre propre logique, outils et arguments spécifiques
+5. Modifiez `src/crew_day_02/main.py` pour ajouter des entrées personnalisées pour vos agents et tâches
+
+### Commandes principales :
+
+- **Créer un agent :**  
+    ```bash
+    crewai create agent <nom_de_l_agent>
+    ```
+
+- **Créer une tâche :**  
+    ```bash
+    crewai create task <nom_de_la_tâche>
+    ```
+
+- **Démarrer le projet :**  
+    ```bash
+    crewai start
+    ```
+
+- **Vérifier les agents et tâches :**  
+    ```bash
+    crewai status
+    ```
+
+- **Exécuter le fichier `main.py` :**  
+    Pour démarrer le projet, vous pouvez exécuter directement le fichier `main.py` :
+
+    ```bash
+    python src/crew_day_02/main.py
+    ```
+
+
